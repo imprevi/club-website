@@ -1,0 +1,219 @@
+/* Import Tailwind CSS first */
+@import "tailwindcss";
+
+:root {
+  /* Professional Dark Theme Colors */
+  --bg-primary: #0f0f14;
+  --bg-secondary: #1a1a24;
+  --bg-tertiary: #24242f;
+  --bg-overlay: #2e2e3a;
+  
+  /* Text Colors */
+  --text-primary: #e8e9ed;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  /* Mature Accent Colors */
+  --accent-primary: #64748b;
+  --accent-secondary: #475569;
+  --accent-highlight: #94a3b8;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+  
+  /* Border Colors */
+  --border-default: #374151;
+  --border-subtle: #2d3748;
+  --border-focus: #64748b;
+  
+  /* Professional Syntax Highlighting */
+  --syntax-keyword: #cbd5e1;
+  --syntax-string: #a3a3a3;
+  --syntax-comment: #6b7280;
+  --syntax-function: #9ca3af;
+  --syntax-variable: #d1d5db;
+  
+  /* Component Colors - More transparent and blurred */
+  --nav-bg: rgba(26, 26, 36, 0.15);
+  --card-bg: rgba(26, 26, 36, 0.4);
+  --terminal-bg: #0f0f14;
+  --terminal-text: #94a3b8;
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-highlight: var(--accent-highlight);
+  --color-border-default: var(--border-default);
+  
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --font-heading: ui-monospace, 'SF Mono', 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Terminal/Code styling */
+.terminal {
+  background: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: var(--font-mono);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid var(--border-default);
+}
+
+.code-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  overflow-x: auto;
+}
+
+/* Navigation styling */
+.nav-syntax {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+/* Professional syntax highlighting classes */
+.syntax-keyword { color: var(--syntax-keyword); }
+.syntax-string { color: var(--syntax-string); }
+.syntax-comment { color: var(--syntax-comment); }
+.syntax-function { color: var(--syntax-function); }
+.syntax-variable { color: var(--syntax-variable); }
+
+/* Custom animations */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink 1s infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Card components */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Button components */
+.btn-primary {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-highlight);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+/* Loading states */
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
