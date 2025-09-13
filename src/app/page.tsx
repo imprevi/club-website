@@ -11,13 +11,13 @@ export default function Home() {
   const [serverInfo, setServerInfo] = useState<DiscordServerInfo | null>(null);
 
   const commands = [
-    "$ cd /mechatronics-club",
+    "$ cd /ieee-swc-club",
     "$ ls -la",
     "> Initializing awesome robotics projects...",
     "> Loading team.members[]...",
     "> Connecting to Discord events...",
     "> Discord integration active! 🚀",
-    "> Welcome to the future of mechatronics!",
+    "> Welcome to IEEE SWC Club!",
   ];
 
   useEffect(() => {
@@ -87,7 +87,7 @@ export default function Home() {
                     <div className="w-3 h-3 bg-[var(--accent-warning)] rounded-full"></div>
                     <div className="w-3 h-3 bg-[var(--accent-success)] rounded-full"></div>
                   </div>
-                  <div className="text-xs text-[var(--text-secondary)]">mechatronics@club:~</div>
+                  <div className="text-xs text-[var(--text-secondary)]">ieee-swc@club:~</div>
                 </div>
                 <div className="space-y-2">
                   {terminalLines.map((line, index) => (
@@ -113,10 +113,8 @@ export default function Home() {
             {/* Right Column - Welcome Message */}
             <div className="order-1 lg:order-2 text-center lg:text-left">
               <div className="mb-6">
-                <h1 className="text-4xl lg:text-6xl font-bold font-mono mb-4">
-                  <span className="syntax-keyword">class</span>{" "}
-                  <span className="syntax-function text-[var(--accent-primary)]">Mechatronics</span>
-                  <span className="text-[var(--text-primary)]">Club</span>
+                <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+                  IEEE SWC Club
                 </h1>
                 <div className="font-mono text-lg text-[var(--text-secondary)] mb-6">
                   <span className="syntax-comment">// Building the future through</span><br/>
@@ -127,17 +125,23 @@ export default function Home() {
               <div className="space-y-4 mb-8">
                 <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
                   Join our community of makers, coders, and engineers as we explore the cutting edge 
-                  of robotics, AI, and mechatronics innovation.
+                  of robotics, AI, and engineering innovation.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="btn-primary">
+                <a
+                  href="/join"
+                  className="btn-primary"
+                >
                   <span className="syntax-function">join</span>()<span className="syntax-comment"> // Join the club</span>
-                </button>
-                <button className="btn-secondary">
-                  <span className="syntax-function">explore</span>()<span className="syntax-comment"> // View projects</span>
-                </button>
+                </a>
+                <a
+                  href="/team"
+                  className="btn-secondary"
+                >
+                  <span className="syntax-function">meetTeam</span>()<span className="syntax-comment"> // Meet the team</span>
+                </a>
               </div>
             </div>
           </div>
@@ -149,7 +153,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-mono font-bold mb-4">
-              <span className="syntax-keyword">const</span>{" "}
               <span className="syntax-variable">stats</span>{" "}
               <span className="text-[var(--text-primary)]">=</span>{" "}
               <span className="text-[var(--accent-primary)]">{"{"}</span>
@@ -226,7 +229,7 @@ export default function Home() {
                       Join Our Discord Community
                     </h3>
                     <p className="text-[var(--text-secondary)] font-mono text-sm mb-6">
-                      <span className="syntax-comment">// Connect with fellow mechatronics enthusiasts</span>
+                      <span className="syntax-comment">// Connect with fellow IEEE members</span>
                     </p>
                   </div>
                   
@@ -307,11 +310,110 @@ export default function Home() {
 
           <div className="text-center mt-8">
             <a 
-              href="/discord" 
+              href="/join" 
               className="bg-[var(--bg-secondary)] border border-[var(--border-default)] text-[var(--text-secondary)] px-6 py-3 rounded-lg font-mono hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-all"
             >
-              <span className="syntax-function">viewAll</span>()<span className="syntax-comment"> // Full Discord integration</span>
+              <span className="syntax-function">joinCommunity</span>()<span className="syntax-comment"> // Full community access</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do - Projects & Learning */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-mono font-bold mb-4">
+              <span className="syntax-keyword">what</span>
+              <span className="text-[var(--accent-primary)]">.</span>
+              <span className="syntax-function">weDo</span>()
+            </h2>
+            <p className="text-[var(--text-secondary)] font-mono text-sm">
+              <span className="syntax-comment">// Hands-on projects, workshops, and learning resources</span>
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Featured Projects */}
+            <div className="card p-6">
+              <div className="flex items-center space-x-2 mb-4">
+                <span className="text-2xl">🤖</span>
+                <h3 className="text-xl font-mono font-semibold">
+                  <span className="syntax-function">projects</span>()
+                </h3>
+              </div>
+              <p className="text-[var(--text-secondary)] mb-4">
+                Build autonomous robots, IoT systems, and computer vision applications with hands-on engineering projects.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-primary)]">→</span> Autonomous Line Following Robot
+                </div>
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-primary)]">→</span> Smart Home IoT Hub
+                </div>
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-primary)]">→</span> Computer Vision Object Tracker
+                </div>
+              </div>
+              <div className="font-mono text-xs text-[var(--text-muted)]">
+                <span className="syntax-comment">// 12+ active projects</span>
+              </div>
+            </div>
+
+            {/* Workshops */}
+            <div className="card p-6">
+              <div className="flex items-center space-x-2 mb-4">
+                <span className="text-2xl">🎓</span>
+                <h3 className="text-xl font-mono font-semibold">
+                  <span className="syntax-function">workshops</span>()
+                </h3>
+              </div>
+              <p className="text-[var(--text-secondary)] mb-4">
+                Interactive learning sessions covering Arduino programming, PCB design, and computer vision fundamentals.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-success)]">✓</span> Arduino Programming Basics
+                </div>
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-success)]">✓</span> PCB Design with KiCad
+                </div>
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-success)]">✓</span> Computer Vision with OpenCV
+                </div>
+              </div>
+              <div className="font-mono text-xs text-[var(--text-muted)]">
+                <span className="syntax-comment">// 65+ total attendees</span>
+              </div>
+            </div>
+
+            {/* Learning Resources */}
+            <div className="card p-6">
+              <div className="flex items-center space-x-2 mb-4">
+                <span className="text-2xl">📚</span>
+                <h3 className="text-xl font-mono font-semibold">
+                  <span className="syntax-function">resources</span>()
+                </h3>
+              </div>
+              <p className="text-[var(--text-secondary)] mb-4">
+                Curated tutorials, datasheets, and tools for robotics and engineering excellence.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-highlight)]">📋</span> Arduino & STM32 Datasheets
+                </div>
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-highlight)]">🎥</span> Video Tutorials & Courses
+                </div>
+                <div className="text-sm">
+                  <span className="font-mono text-[var(--accent-highlight)]">💻</span> Software & Development Tools
+                </div>
+              </div>
+              <div className="font-mono text-xs text-[var(--text-muted)]">
+                <span className="syntax-comment">// 9 categories, 4.7★ avg rating</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -322,7 +424,7 @@ export default function Home() {
           <div className="code-block mb-8">
             <div className="font-mono text-sm">
               <span className="syntax-keyword">if</span> (<span className="syntax-variable">interested</span> <span className="text-[var(--text-primary)]">===</span> <span className="syntax-keyword">true</span>) {"{"}<br/>
-              <span className="ml-4 syntax-function">join</span>(<span className="syntax-string">"mechatronics-club"</span>);<br/>
+              <span className="ml-4 syntax-function">join</span>(<span className="syntax-string">"ieee-swc-club"</span>);<br/>
               <span className="ml-4 syntax-function">build</span>(<span className="syntax-string">"amazing-robots"</span>);<br/>
               <span className="ml-4 syntax-function">learn</span>(<span className="syntax-string">"cutting-edge-tech"</span>);<br/>
               {"}"}
@@ -331,18 +433,16 @@ export default function Home() {
 
           <div className="space-y-4">
             <h2 className="text-2xl font-mono font-bold">
-              Ready to start your mechatronics journey?
+              Ready to start your IEEE journey?
             </h2>
             <p className="text-[var(--text-secondary)]">
               Join our Discord community and get involved in exciting projects!
             </p>
             <a 
-              href={discordService.getInviteUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
+              href="/join"
               className="btn-primary text-lg px-8 py-4 inline-block"
           >
-              <span className="syntax-function">discord</span>.<span className="syntax-function">join</span>()
+              <span className="syntax-function">join</span>.<span className="syntax-function">community</span>()
           </a>
           </div>
         </div>

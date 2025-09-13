@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { discordService } from "../lib/discord";
 
 interface TeamMember {
   id: string;
@@ -33,7 +34,7 @@ export default function TeamPage() {
       skills: ["python", "ros", "machine-learning", "leadership", "arduino"],
       github: "alexchen",
       linkedin: "alex-chen-eng",
-      email: "alex@mechatronics.club",
+      email: "alex@ieee-swc.org",
       avatar: "AC",
       joinDate: "2023-09-01",
       contributions: 47,
@@ -48,7 +49,7 @@ export default function TeamPage() {
       skills: ["pcb-design", "embedded-systems", "altium", "c++", "mentoring"],
       github: "sarahkim",
       linkedin: "sarah-kim-ee",
-      email: "sarah@mechatronics.club",
+      email: "sarah@ieee-swc.org",
       avatar: "SK",
       joinDate: "2023-09-15",
       contributions: 35,
@@ -62,7 +63,7 @@ export default function TeamPage() {
       bio: "Full-stack developer with expertise in robotics software architecture. Leads our software development initiatives.",
       skills: ["react", "node-js", "python", "docker", "git"],
       github: "marcusj",
-      email: "marcus@mechatronics.club",
+      email: "marcus@ieee-swc.org",
       avatar: "MJ",
       joinDate: "2023-10-01",
       contributions: 52,
@@ -76,7 +77,7 @@ export default function TeamPage() {
       bio: "Organizes project timelines and specializes in IoT and sensor integration for smart systems.",
       skills: ["iot", "project-management", "sensors", "raspberry-pi", "communication"],
       github: "emmarodriguez",
-      email: "emma@mechatronics.club",
+      email: "emma@ieee-swc.org",
       avatar: "ER",
       joinDate: "2023-11-12",
       contributions: 28,
@@ -176,7 +177,7 @@ export default function TeamPage() {
             <span className="syntax-variable">team</span>.<span className="syntax-function">members</span>[]
           </h1>
           <p className="text-[var(--text-secondary)] font-mono text-sm">
-            <span className="syntax-comment">// Meet the minds behind our mechatronics innovations</span>
+            <span className="syntax-comment">// Meet the minds behind our IEEE innovations</span>
           </p>
         </div>
 
@@ -400,15 +401,23 @@ export default function TeamPage() {
               <span className="syntax-function">joinTeam</span>()
             </h3>
             <p className="text-[var(--text-secondary)] mb-6">
-              Interested in robotics and mechatronics? Join our community of makers and innovators!
+              Interested in robotics and engineering? Join our IEEE community of makers and innovators!
             </p>
             <div className="space-x-4">
-              <button className="btn-primary">
-                <span className="syntax-function">apply</span>(<span className="syntax-string">"member"</span>)
-              </button>
-              <button className="btn-secondary">
+              <a
+                href={discordService.getInviteUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <span className="syntax-function">join</span>(<span className="syntax-string">"discord"</span>)
+              </a>
+              <a
+                href="/join"
+                className="btn-secondary"
+              >
                 <span className="syntax-function">learnMore</span>()
-              </button>
+              </a>
             </div>
           </div>
         </div>

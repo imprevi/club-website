@@ -8,12 +8,9 @@ const Navigation = () => {
 
   const navigationItems = [
     { name: "home", path: "/", syntax: "./index" },
-    { name: "projects", path: "/projects", syntax: "./projects.get()" },
+    { name: "join", path: "/join", syntax: "./join.community()" },
     { name: "team", path: "/team", syntax: "./team.members[]" },
-    { name: "resources", path: "/resources", syntax: "./resources.library()" },
-    { name: "workshops", path: "/workshops", syntax: "./workshops.recordings[]" },
-    { name: "events", path: "/events", syntax: "./events.upcoming()" },
-    { name: "shop", path: "/shop", syntax: "./shop.init() // Coming Soon", disabled: true },
+    { name: "admin", path: "/admin", syntax: "./admin.login() // Staff Only", disabled: true },
   ];
 
   return (
@@ -22,10 +19,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <div className="font-mono text-lg font-bold">
-              <span className="syntax-keyword">class</span>{" "}
-              <span className="syntax-function">MechatronicsClub</span>
-              <span className="text-[var(--accent-primary)]">{"{"}</span>
+            <div className="text-lg font-bold">
+              IEEE SWC Club
             </div>
           </Link>
 

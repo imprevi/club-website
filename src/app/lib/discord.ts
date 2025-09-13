@@ -67,7 +67,7 @@ class DiscordService {
   // Mock data for development - replace with real API calls
   private mockServerInfo: DiscordServerInfo = {
     id: this.SERVER_ID,
-    name: 'Mechatronics Club',
+    name: 'IEEE SWC Club',
     icon: '/discord-icon.png',
     member_count: 74, // Updated to match real server
     online_count: 8, // Updated to match real online count
@@ -250,7 +250,7 @@ class DiscordService {
           
           return {
             id: this.SERVER_ID,
-            name: widgetData.name || 'Mechatronics Club',
+            name: widgetData.name || 'IEEE SWC Club',
             icon: iconUrl,
             approximate_member_count: 74, // Use the known member count from your server
             approximate_presence_count: onlineCount
@@ -260,7 +260,7 @@ class DiscordService {
           // If widget API fails, fall back to known values
           return {
             id: this.SERVER_ID,
-            name: 'Mechatronics Club',
+            name: 'IEEE SWC Club',
             icon: null,
             approximate_member_count: 74,
             approximate_presence_count: 0

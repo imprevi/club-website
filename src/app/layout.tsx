@@ -20,21 +20,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mechatronics Club | Robotics & AI Innovation",
-  description: "Building the future through robotics, machine learning, and mechatronics innovation. Join our community of makers, coders, and engineers.",
-  keywords: ["mechatronics", "robotics", "machine learning", "arduino", "engineering", "club"],
-  authors: [{ name: "Mechatronics Club" }],
+  title: "IEEE SWC Club | Robotics & AI Innovation",
+  description: "Building the future through robotics, machine learning, and engineering innovation. Join our IEEE student community of makers, coders, and engineers.",
+  keywords: ["IEEE", "SWC", "Southwestern College", "robotics", "machine learning", "arduino", "engineering", "student branch"],
+  authors: [{ name: "IEEE SWC Club" }],
   robots: "index, follow",
   openGraph: {
-    title: "Mechatronics Club | Robotics & AI Innovation",
-    description: "Building the future through robotics, machine learning, and mechatronics innovation.",
+    title: "IEEE SWC Club | Robotics & AI Innovation",
+    description: "Building the future through robotics, machine learning, and engineering innovation.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mechatronics Club | Robotics & AI Innovation",
-    description: "Building the future through robotics, machine learning, and mechatronics innovation.",
+    title: "IEEE SWC Club | Robotics & AI Innovation",
+    description: "Building the future through robotics, machine learning, and engineering innovation.",
   },
 };
 
@@ -62,7 +62,7 @@ export default function RootLayout({
           <footer className="border-t border-[var(--border-default)] bg-[var(--bg-secondary)] py-8 px-4">
             <div className="max-w-7xl mx-auto text-center">
               <div className="font-mono text-sm text-[var(--text-secondary)]">
-                <span className="syntax-comment">// Built with ❤️ by the Mechatronics Club</span>
+                <span className="syntax-comment">// Built with ❤️ by the IEEE SWC Club</span>
               </div>
               <div className="mt-2 font-mono text-xs text-[var(--text-muted)]">
                 <span className="syntax-keyword">const</span> <span className="syntax-variable">year</span> = <span className="syntax-string">"{new Date().getFullYear()}"</span>;

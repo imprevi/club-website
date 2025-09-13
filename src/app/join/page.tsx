@@ -49,13 +49,115 @@ export default function DiscordPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-mono font-bold mb-4">
-            <span className="syntax-keyword">discord</span>
+            <span className="syntax-keyword">join</span>
             <span className="text-[var(--accent-primary)]">.</span>
-            <span className="syntax-function">integration</span>
+            <span className="syntax-function">community</span>
             <span className="text-[var(--accent-primary)]">()</span>
           </h1>
           <p className="text-[var(--text-secondary)] font-mono text-sm">
-            <span className="syntax-comment">// Real-time community activity and events</span>
+            <span className="syntax-comment">// Connect with IEEE SWC Club and start building</span>
+          </p>
+        </div>
+
+        {/* Ways to Join */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-mono font-bold mb-4">
+              <span className="syntax-keyword">ways</span>
+              <span className="text-[var(--accent-primary)]">.</span>
+              <span className="syntax-function">toJoin</span>()
+            </h2>
+            <p className="text-[var(--text-secondary)] font-mono text-sm">
+              <span className="syntax-comment">// Join us at Bonita Sunnyside Library every Saturday</span>
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {/* Discord Community */}
+            <div className="card p-6 text-center">
+              <div className="text-3xl mb-4">💬</div>
+              <h3 className="font-mono font-semibold mb-2 text-[var(--accent-primary)]">
+                Discord Community
+              </h3>
+              <p className="text-sm text-[var(--text-secondary)] mb-4">
+                Join our active Discord server for real-time discussions, project collaboration, and event updates.
+              </p>
+              <div className="text-xs text-[var(--text-muted)] font-mono mb-4">
+                <span className="syntax-comment">// 74+ members online daily</span>
+              </div>
+              <a
+                href={discordService.getInviteUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-sm w-full"
+              >
+                <span className="syntax-function">join</span>.<span className="syntax-function">discord</span>()
+              </a>
+            </div>
+
+            {/* In-Person Meetings */}
+            <div className="card p-6 text-center">
+              <div className="text-3xl mb-4">📚</div>
+              <h3 className="font-mono font-semibold mb-2 text-[var(--accent-primary)]">
+                Weekly Meetings
+              </h3>
+              <p className="text-sm text-[var(--text-secondary)] mb-4">
+                Join us every Saturday at Bonita Sunnyside Library for hands-on projects and collaboration.
+              </p>
+              <div className="text-xs text-[var(--text-muted)] font-mono mb-4">
+                <span className="syntax-comment">// Saturdays 10:00 AM - 12:30 PM</span>
+              </div>
+              <a
+                href="https://maps.google.com/?q=4375+Bonita+Rd,+Bonita,+CA+91902"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-sm w-full inline-block"
+              >
+                <span className="syntax-function">get</span>.<span className="syntax-function">directions</span>()
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Information */}
+          <div className="bg-[var(--bg-secondary)] rounded-lg p-6 border border-[var(--border-default)]">
+            <h3 className="font-mono font-semibold mb-4 text-center">
+              <span className="syntax-keyword">contact</span>
+              <span className="text-[var(--accent-primary)]">.</span>
+              <span className="syntax-function">info</span>()
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+              <div>
+                <div className="font-mono text-sm text-[var(--text-secondary)] mb-1">
+                  <span className="syntax-string">"location"</span>:
+                </div>
+                <div className="font-mono text-sm text-[var(--accent-primary)] mb-1">
+                  "Bonita Sunnyside Library"
+                </div>
+                <div className="font-mono text-xs text-[var(--text-muted)]">
+                  "4375 Bonita Rd, Bonita, CA 91902"
+                </div>
+              </div>
+              <div>
+                <div className="font-mono text-sm text-[var(--text-secondary)] mb-1">
+                  <span className="syntax-string">"meeting_time"</span>:
+                </div>
+                <div className="font-mono text-sm text-[var(--accent-primary)]">
+                  "Saturdays 10:00 AM - 12:30 PM"
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Discord Integration Details */}
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-mono font-bold mb-4">
+            <span className="syntax-keyword">discord</span>
+            <span className="text-[var(--accent-primary)]">.</span>
+            <span className="syntax-function">community</span>()
+          </h2>
+          <p className="text-[var(--text-secondary)] font-mono text-sm">
+            <span className="syntax-comment">// Real-time activity and upcoming events</span>
           </p>
         </div>
 
@@ -119,7 +221,7 @@ export default function DiscordPage() {
                     Join Our Discord Community
                   </h3>
                   <p className="text-[var(--text-secondary)] font-mono text-sm mb-8">
-                    <span className="syntax-comment">// Connect with fellow mechatronics enthusiasts</span>
+                    <span className="syntax-comment">// Connect with fellow IEEE members</span>
                   </p>
                 </div>
                 

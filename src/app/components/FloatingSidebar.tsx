@@ -22,13 +22,8 @@ const FloatingSidebar = () => {
 
   const navigationItems: NavigationItem[] = [
     { name: "home", path: "/" },
-    { name: "projects", path: "/projects" },
+    { name: "join", path: "/join" },
     { name: "team", path: "/team" },
-    { name: "resources", path: "/resources" },
-    { name: "workshops", path: "/workshops" },
-    { name: "discord", path: "/discord" },
-    { name: "events", path: "/events", disabled: true },
-    { name: "shop", path: "/shop", disabled: true },
     ...(userProfile?.role === 'admin' ? [{ name: "admin", path: "/admin" }] : []),
   ];
 
@@ -94,21 +89,17 @@ const FloatingSidebar = () => {
             {/* Handle */}
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="w-full p-4 text-left font-mono text-sm focus:outline-none"
+              className="w-full p-4 text-left font-mono text-sm hover:bg-[var(--bg-secondary)] transition-all duration-300 ease-out focus:outline-none"
             >
               <div className="flex items-center justify-between">
-                <span className="syntax-keyword">class</span>{" "}
-                <span className="syntax-function">MechatronicsClub</span>
-                <span className="text-[var(--accent-primary)]">
-                  {isExpanded ? "{" : "{}"}
-                </span>
+                <span className="font-bold">IEEE SWC Club</span>
                 <div className="w-8 h-1 bg-[var(--border-default)] rounded-full"></div>
               </div>
             </button>
 
             {/* Expanded Content */}
             <div className={`transform transition-all duration-500 ease-out will-change-transform overflow-hidden ${
-              isExpanded ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-4'
+              isExpanded ? 'max-h-[28rem] opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-4'
             }`}>
               <div className="px-4 pb-6">
                 <div className="space-y-2">
@@ -163,9 +154,6 @@ const FloatingSidebar = () => {
                     )}
                   </div>
                 </div>
-                <div className="mt-2 px-4 font-mono text-sm">
-                  <span className="text-[var(--accent-primary)]">{"}"}</span>
-                </div>
               </div>
             </div>
           </div>
@@ -190,25 +178,16 @@ const FloatingSidebar = () => {
           {/* Header */}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full p-4 text-left font-mono text-sm hover:bg-[var(--bg-tertiary)] rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transform will-change-transform"
+            className="w-full p-4 text-left font-mono text-sm hover:bg-[var(--bg-secondary)] rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transform will-change-transform"
           >
-            <div className="transition-all duration-300 ease-out">
-              <span className="syntax-keyword">class</span>{" "}
-              <span className="syntax-function">MechatronicsClub</span>
-              <span className="text-[var(--accent-primary)]">
-                {isExpanded ? "" : "{}"}
-              </span>
-            </div>
-            <div className={`transition-all duration-300 ease-out text-[var(--accent-primary)] overflow-hidden ${
-              isExpanded ? 'max-h-6 opacity-100 mt-1' : 'max-h-0 opacity-0'
-            }`}>
-              {"{"}
+            <div className="transition-all duration-300 ease-out font-bold">
+              IEEE SWC Club
             </div>
           </button>
 
           {/* Expanded Content */}
           <div className={`transform transition-all duration-500 ease-out will-change-transform overflow-hidden ${
-            isExpanded ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-4'
+            isExpanded ? 'max-h-[28rem] opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-4'
           }`}>
             <div className="px-4 pb-4">
               <div className="space-y-1">
@@ -261,9 +240,6 @@ const FloatingSidebar = () => {
                     </button>
                   )}
                 </div>
-              </div>
-              <div className="mt-2 px-3 font-mono text-sm transition-all duration-300 ease-out">
-                <span className="text-[var(--accent-primary)]">{"}"}</span>
               </div>
             </div>
           </div>
