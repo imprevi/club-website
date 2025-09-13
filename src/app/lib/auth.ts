@@ -19,7 +19,7 @@ export class AuthService {
     if (error) throw error
 
     // Create user profile in our custom users table
-    if (data.user) {
+    if (data.user && supabase) {
       const { error: profileError } = await supabase
         .from('users')
         .insert([
@@ -79,6 +79,7 @@ export class AuthService {
 
   // Update user profile
   async updateUserProfile(userId: string, updates: Partial<User>) {
+    if (!supabase) throw new Error('Supabase not configured')
     const { data, error } = await supabase
       .from('users')
       .update(updates)
@@ -92,12 +93,14 @@ export class AuthService {
 
   // Check if user is admin
   async isAdmin(userId: string): Promise<boolean> {
+    if (!supabase) return false
     const profile = await this.getUserProfile(userId)
     return profile?.role === 'admin'
   }
 
   // Get all users (admin only)
   async getAllUsers(): Promise<User[]> {
+    if (!supabase) return []
     const { data, error } = await supabase
       .from('users')
       .select('*')
@@ -109,6 +112,7 @@ export class AuthService {
 
   // Update user role (admin only)
   async updateUserRole(userId: string, role: 'admin' | 'member' | 'visitor') {
+    if (!supabase) throw new Error('Supabase not configured')
     const { data, error } = await supabase
       .from('users')
       .update({ role })
