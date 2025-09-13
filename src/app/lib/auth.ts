@@ -4,6 +4,7 @@ import type { User } from './supabase'
 export class AuthService {
   // Sign up new user
   async signUp(email: string, password: string, userData: { username: string; full_name: string }) {
+    if (!supabase) throw new Error('Supabase not configured')
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -39,6 +40,7 @@ export class AuthService {
 
   // Sign in user
   async signIn(email: string, password: string) {
+    if (!supabase) throw new Error('Supabase not configured')
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -50,18 +52,21 @@ export class AuthService {
 
   // Sign out user
   async signOut() {
+    if (!supabase) throw new Error('Supabase not configured')
     const { error } = await supabase.auth.signOut()
     if (error) throw error
   }
 
   // Get current user
   async getCurrentUser() {
+    if (!supabase) return null
     const { data: { user } } = await supabase.auth.getUser()
     return user
   }
 
   // Get user profile
   async getUserProfile(userId: string): Promise<User | null> {
+    if (!supabase) return null
     const { data, error } = await supabase
       .from('users')
       .select('*')
@@ -117,6 +122,9 @@ export class AuthService {
 
   // Listen to auth changes
   onAuthStateChange(callback: (event: string, session: any) => void) {
+    if (!supabase) {
+      return { data: { subscription: { unsubscribe: () => {} } } }
+    }
     return supabase.auth.onAuthStateChange(callback)
   }
 }
