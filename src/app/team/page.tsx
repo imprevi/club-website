@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { discordService } from "../lib/discord";
+import { useState, useEffect } from "react";
+import { discordService, DiscordServerInfo } from "../lib/discord";
 
 interface TeamMember {
   id: string;
@@ -22,6 +22,7 @@ interface TeamMember {
 export default function TeamPage() {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [showOnlyCore, setShowOnlyCore] = useState(false);
+  const [serverInfo, setServerInfo] = useState<DiscordServerInfo | null>(null);
 
   // Mock team data - in real app this would come from database
   const teamMembers: TeamMember[] = [
@@ -144,6 +145,19 @@ export default function TeamPage() {
     return true;
   });
 
+  useEffect(() => {
+    const fetchDiscordData = async () => {
+      try {
+        const server = await discordService.getServerInfo();
+        setServerInfo(server);
+      } catch (error) {
+        console.error('Failed to fetch Discord server info:', error);
+      }
+    };
+
+    fetchDiscordData();
+  }, []);
+
   const getRoleColor = (role: string) => {
     switch (role) {
       case "president": return "text-[var(--accent-success)]";
@@ -192,18 +206,18 @@ export default function TeamPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ml-4">
             <div className="text-center">
               <div className="font-mono text-xs text-[var(--text-secondary)] mb-1">
-                <span className="syntax-string">"total_members"</span>:
+                <span className="syntax-string">"discord_members"</span>:
               </div>
               <div className="text-2xl font-bold text-[var(--accent-primary)]">
-                {teamMembers.length}
+                {serverInfo?.member_count || 74}
               </div>
             </div>
             <div className="text-center">
               <div className="font-mono text-xs text-[var(--text-secondary)] mb-1">
-                <span className="syntax-string">"core_team"</span>:
+                <span className="syntax-string">"online_now"</span>:
               </div>
               <div className="text-2xl font-bold text-[var(--accent-success)]">
-                {teamMembers.filter(m => m.isCore).length}
+                {serverInfo?.online_count || 8}
               </div>
             </div>
             <div className="text-center">
