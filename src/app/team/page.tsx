@@ -24,118 +24,8 @@ export default function TeamPage() {
   const [showOnlyCore, setShowOnlyCore] = useState(false);
   const [serverInfo, setServerInfo] = useState<DiscordServerInfo | null>(null);
 
-  // Mock team data - in real app this would come from database
-  const teamMembers: TeamMember[] = [
-    {
-      id: "1",
-      name: "Alex Chen",
-      role: "president",
-      title: "Club President & Lead Engineer",
-      bio: "Passionate about autonomous systems and machine learning. Leading the club's strategic direction and major robotics initiatives.",
-      skills: ["python", "ros", "machine-learning", "leadership", "arduino"],
-      github: "alexchen",
-      linkedin: "alex-chen-eng",
-      email: "alex@ieee-swc.org",
-      avatar: "AC",
-      joinDate: "2023-09-01",
-      contributions: 47,
-      isCore: true
-    },
-    {
-      id: "2", 
-      name: "Sarah Kim",
-      role: "vice_president",
-      title: "VP of Engineering & PCB Design Lead",
-      bio: "Expert in circuit design and embedded systems. Manages technical workshops and mentors new members.",
-      skills: ["pcb-design", "embedded-systems", "altium", "c++", "mentoring"],
-      github: "sarahkim",
-      linkedin: "sarah-kim-ee",
-      email: "sarah@ieee-swc.org",
-      avatar: "SK",
-      joinDate: "2023-09-15",
-      contributions: 35,
-      isCore: true
-    },
-    {
-      id: "3",
-      name: "Marcus Johnson",
-      role: "technical_lead",
-      title: "Software Engineering Lead",
-      bio: "Full-stack developer with expertise in robotics software architecture. Leads our software development initiatives.",
-      skills: ["react", "node-js", "python", "docker", "git"],
-      github: "marcusj",
-      email: "marcus@ieee-swc.org",
-      avatar: "MJ",
-      joinDate: "2023-10-01",
-      contributions: 52,
-      isCore: true
-    },
-    {
-      id: "4",
-      name: "Emma Rodriguez",
-      role: "project_manager",
-      title: "Project Coordinator & IoT Specialist",
-      bio: "Organizes project timelines and specializes in IoT and sensor integration for smart systems.",
-      skills: ["iot", "project-management", "sensors", "raspberry-pi", "communication"],
-      github: "emmarodriguez",
-      email: "emma@ieee-swc.org",
-      avatar: "ER",
-      joinDate: "2023-11-12",
-      contributions: 28,
-      isCore: true
-    },
-    {
-      id: "5",
-      name: "James Liu",
-      role: "hardware_engineer",
-      title: "Mechanical Design Engineer",
-      bio: "CAD expert and mechanical systems designer. Focuses on robot chassis and mechanical assemblies.",
-      skills: ["solidworks", "3d-printing", "mechanical-design", "manufacturing", "cad"],
-      github: "jamesliu",
-      avatar: "JL",
-      joinDate: "2024-01-20",
-      contributions: 19,
-      isCore: true
-    },
-    {
-      id: "6",
-      name: "David Park",
-      role: "research_lead",
-      title: "Computer Vision Researcher",
-      bio: "PhD student researching computer vision applications in robotics. Leads our AI/ML research initiatives.",
-      skills: ["computer-vision", "tensorflow", "opencv", "research", "python"],
-      github: "davidpark",
-      avatar: "DP",
-      joinDate: "2024-02-01",
-      contributions: 15,
-      isCore: true
-    },
-    {
-      id: "7",
-      name: "Lisa Zhang",
-      role: "member",
-      title: "Software Developer",
-      bio: "Computer science student passionate about AI and autonomous systems. Active contributor to software projects.",
-      skills: ["python", "javascript", "machine-learning", "databases"],
-      github: "lisazhang",
-      avatar: "LZ",
-      joinDate: "2024-03-15",
-      contributions: 12,
-      isCore: false
-    },
-    {
-      id: "8",
-      name: "Ryan O'Connor",
-      role: "member", 
-      title: "Electronics Enthusiast",
-      bio: "Electrical engineering student focused on power systems and motor control for robotics applications.",
-      skills: ["electronics", "motor-control", "power-systems", "testing"],
-      avatar: "RO",
-      joinDate: "2024-04-10",
-      contributions: 8,
-      isCore: false
-    }
-  ];
+  // Team members - to be loaded from database
+  const teamMembers: TeamMember[] = [];
 
   const allSkills = Array.from(new Set(teamMembers.flatMap(member => member.skills)));
   
@@ -225,7 +115,7 @@ export default function TeamPage() {
                 <span className="syntax-string">"total_contributions"</span>:
               </div>
               <div className="text-2xl font-bold text-[var(--accent-highlight)]">
-                {teamMembers.reduce((sum, m) => sum + m.contributions, 0)}
+                0
               </div>
             </div>
             <div className="text-center">
@@ -233,7 +123,7 @@ export default function TeamPage() {
                 <span className="syntax-string">"skills_count"</span>:
               </div>
               <div className="text-2xl font-bold text-[var(--accent-warning)]">
-                {allSkills.length}
+                0
               </div>
             </div>
           </div>
@@ -286,7 +176,7 @@ export default function TeamPage() {
                 >
                   all
                 </button>
-                {allSkills.slice(0, 8).map(skill => (
+                {allSkills.length > 0 && allSkills.slice(0, 8).map(skill => (
                   <button
                     key={skill}
                     onClick={() => setSelectedSkill(skill)}
@@ -395,13 +285,13 @@ export default function TeamPage() {
         </div>
 
         {/* No Members Message */}
-        {filteredMembers.length === 0 && (
+        {teamMembers.length === 0 && (
           <div className="text-center py-12">
             <div className="code-block max-w-md mx-auto">
               <div className="font-mono text-sm">
-                <span className="syntax-keyword">if</span> (<span className="syntax-variable">filteredMembers</span>.<span className="syntax-function">length</span> <span className="text-[var(--text-primary)]">===</span> <span className="text-[var(--accent-primary)]">0</span>) {"{"}<br/>
-                <span className="ml-4 syntax-function">console</span>.<span className="syntax-function">log</span>(<span className="syntax-string">"No members match your filters"</span>);<br/>
-                <span className="ml-4 syntax-function">clearFilters</span>();<br/>
+                <span className="syntax-keyword">if</span> (<span className="syntax-variable">teamMembers</span>.<span className="syntax-function">length</span> <span className="text-[var(--text-primary)]">===</span> <span className="text-[var(--accent-primary)]">0</span>) {"{"}<br/>
+                <span className="ml-4 syntax-function">console</span>.<span className="syntax-function">log</span>(<span className="syntax-string">"Team roster coming soon..."</span>);<br/>
+                <span className="ml-4 syntax-keyword">return</span> <span className="syntax-string">"Stay tuned!"</span>;<br/>
                 {"}"}
               </div>
             </div>
