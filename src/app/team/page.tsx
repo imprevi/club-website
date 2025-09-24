@@ -50,6 +50,18 @@ export default function TeamPage() {
     },
     {
       id: "3",
+      name: "Gabriel Martinez",
+      role: "vice_president_ai",
+      title: "Electrical Engineering",
+      bio: "Electrical Engineering student serving as Vice President of AI, specializing in machine learning applications for applied physics and leveraging quantum computational tools. Passionate about developing intelligent algorithms that enable autonomous systems and robotics to learn, adapt, and make decisions in complex environments. Currently exploring deep reinforcement learning, computer vision techniques, and quantum-enhanced machine learning for cutting-edge engineering solutions.",
+      skills: ["machine-learning", "applied-physics", "quantum-computing", "python", "tensorflow", "computer-vision", "deep-learning", "research"],
+      avatar: "GM",
+      joinDate: "2024-02-10",
+      contributions: 18,
+      isCore: true
+    },
+    {
+      id: "4",
       name: "Gabriel Leyva",
       role: "treasurer",
       title: "Electrical Engineering",
@@ -61,7 +73,7 @@ export default function TeamPage() {
       isCore: true
     },
     {
-      id: "4",
+      id: "5",
       name: "Samuel Gutierrez",
       role: "secretary",
       title: "Mechanical Engineering",
@@ -70,18 +82,6 @@ export default function TeamPage() {
       avatar: "SG",
       joinDate: "2024-02-01",
       contributions: 20,
-      isCore: true
-    },
-    {
-      id: "5",
-      name: "Gabriel Martinez",
-      role: "research_lead",
-      title: "Computer Science",
-      bio: "Undergraduate researcher specializing in machine learning applications for autonomous systems and robotics. Passionate about developing intelligent algorithms that enable robots to learn, adapt, and make decisions in complex environments. Currently exploring deep reinforcement learning and computer vision techniques for real-world engineering solutions.",
-      skills: ["machine-learning", "python", "tensorflow", "computer-vision", "deep-learning", "research"],
-      avatar: "GM",
-      joinDate: "2024-02-10",
-      contributions: 18,
       isCore: true
     },
     {
@@ -94,6 +94,18 @@ export default function TeamPage() {
       avatar: "TJ",
       joinDate: "2024-03-01",
       contributions: 12,
+      isCore: true
+    },
+    {
+      id: "7",
+      name: "Leann Gamboa",
+      role: "representative",
+      title: "Biology | Pre-Dental",
+      bio: "Biology major and pre-dental student bringing a unique interdisciplinary perspective to our IEEE chapter. Passionate about bridging the gap between biological sciences and engineering innovation, particularly interested in biomedical applications of technology. Dedicated to fostering collaboration between STEM disciplines and expanding IEEE's impact across diverse academic fields through outreach and cross-departmental initiatives.",
+      skills: ["biology", "biomedical-applications", "interdisciplinary-collaboration", "outreach", "academic-liaison"],
+      avatar: "LG",
+      joinDate: "2024-03-15",
+      contributions: 8,
       isCore: true
     }
   ];
@@ -116,8 +128,10 @@ export default function TeamPage() {
     switch (role) {
       case "president": return "text-[var(--accent-success)]";
       case "vice_president": return "text-[var(--accent-primary)]";
+      case "vice_president_ai": return "text-[var(--accent-primary)]";
       case "treasurer": return "text-[var(--accent-warning)]";
       case "secretary": return "text-[var(--accent-secondary)]";
+      case "representative": return "text-[var(--accent-highlight)]";
       case "research_lead": return "text-[var(--accent-primary)]";
       case "social_media_manager": return "text-[var(--accent-highlight)]";
       case "technical_lead": return "text-[var(--accent-highlight)]";
@@ -131,8 +145,10 @@ export default function TeamPage() {
     switch (role) {
       case "president": return "👑";
       case "vice_president": return "";
+      case "vice_president_ai": return "🤖";
       case "treasurer": return "💰";
       case "secretary": return "📝";
+      case "representative": return "🌟";
       case "research_lead": return "🔬";
       case "social_media_manager": return "📱";
       case "technical_lead": return "🚀";
@@ -174,8 +190,10 @@ export default function TeamPage() {
                     <div className={`text-sm font-semibold ${getRoleColor(member.role)} uppercase tracking-wide`}>
                       {member.role === 'president' ? 'President' :
                        member.role === 'vice_president' ? 'Vice President of Hardware' : 
+                       member.role === 'vice_president_ai' ? 'Vice President of AI' :
                        member.role === 'treasurer' ? 'Treasurer' :
                        member.role === 'secretary' ? 'Secretary & Head of Mechanical Operations' :
+                       member.role === 'representative' ? 'Representative' :
                        member.role === 'research_lead' ? 'Research Lead' :
                        member.role === 'social_media_manager' ? 'Social Media Manager' :
                        member.role.replace('_', ' ')}
