@@ -68,11 +68,11 @@ export default function DiscordPage() {
               <span className="syntax-function">toJoin</span>()
             </h2>
             <p className="text-[var(--text-secondary)] font-mono text-sm">
-              <span className="syntax-comment">// Join us at Bonita Sunnyside Library every Saturday</span>
+              <span className="syntax-comment">// Multiple meeting times for different engineering disciplines</span>
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Discord Community */}
             <div className="card p-6 text-center">
               <div className="text-3xl mb-4">💬</div>
@@ -95,20 +95,48 @@ export default function DiscordPage() {
               </a>
             </div>
 
-            {/* In-Person Meetings */}
+            {/* Mechanical Engineering Meetings */}
             <div className="card p-6 text-center">
-              <div className="text-3xl mb-4">📚</div>
+              <div className="text-3xl mb-4">⚙️</div>
               <h3 className="font-mono font-semibold mb-2 text-[var(--accent-primary)]">
-                Weekly Meetings
+                Mechanical Engineering
               </h3>
               <p className="text-sm text-[var(--text-secondary)] mb-4">
-                Join us every Saturday at Bonita Sunnyside Library for hands-on projects and collaboration.
+                Join us every Thursday at SWC Chula Vista Campus for hands-on mechanical engineering projects.
               </p>
+              <div className="text-xs text-[var(--text-muted)] font-mono mb-2">
+                <span className="syntax-comment">// Every Thursday</span>
+              </div>
               <div className="text-xs text-[var(--text-muted)] font-mono mb-4">
-                <span className="syntax-comment">// Saturdays 10:00 AM - 12:30 PM</span>
+                <span className="syntax-comment">// 3:00PM - 5:00PM</span>
               </div>
               <a
-                href="https://maps.google.com/?q=4375+Bonita+Rd,+Bonita,+CA+91902"
+                href="https://maps.google.com/?q=SWC+Chula+Vista+Campus+Room+60-108"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-sm w-full inline-block"
+              >
+                <span className="syntax-function">get</span>.<span className="syntax-function">directions</span>()
+              </a>
+            </div>
+
+            {/* ECE Meetings */}
+            <div className="card p-6 text-center">
+              <div className="text-3xl mb-4">🔌</div>
+              <h3 className="font-mono font-semibold mb-2 text-[var(--accent-primary)]">
+                Electrical & Computer Engineering
+              </h3>
+              <p className="text-sm text-[var(--text-secondary)] mb-4">
+                Join us every Saturday at SWC National City Campus for ECE projects and collaboration.
+              </p>
+              <div className="text-xs text-[var(--text-muted)] font-mono mb-2">
+                <span className="syntax-comment">// Every Saturday</span>
+              </div>
+              <div className="text-xs text-[var(--text-muted)] font-mono mb-4">
+                <span className="syntax-comment">// 10:00AM - 12:30PM</span>
+              </div>
+              <a
+                href="https://maps.google.com/?q=SWC+National+City+Campus+Room+7102"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary text-sm w-full inline-block"
@@ -121,28 +149,37 @@ export default function DiscordPage() {
           {/* Contact Information */}
           <div className="bg-[var(--bg-secondary)] rounded-lg p-6 border border-[var(--border-default)]">
             <h3 className="font-mono font-semibold mb-4 text-center">
-              <span className="syntax-keyword">contact</span>
+              <span className="syntax-keyword">meeting</span>
               <span className="text-[var(--accent-primary)]">.</span>
-              <span className="syntax-function">info</span>()
+              <span className="syntax-function">locations</span>()
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
               <div>
                 <div className="font-mono text-sm text-[var(--text-secondary)] mb-1">
-                  <span className="syntax-string">"location"</span>:
+                  <span className="syntax-string">"mech_eng"</span>:
                 </div>
                 <div className="font-mono text-sm text-[var(--accent-primary)] mb-1">
-                  "Bonita Sunnyside Library"
+                  "Room 60-108 (Math Center)"
                 </div>
-                <div className="font-mono text-xs text-[var(--text-muted)]">
-                  "4375 Bonita Rd, Bonita, CA 91902"
+                <div className="font-mono text-xs text-[var(--text-muted)] mb-2">
+                  "Chula Vista Campus"
+                </div>
+                <div className="font-mono text-xs text-[var(--accent-success)]">
+                  "Thursdays 3:00PM-5:00PM"
                 </div>
               </div>
               <div>
                 <div className="font-mono text-sm text-[var(--text-secondary)] mb-1">
-                  <span className="syntax-string">"meeting_time"</span>:
+                  <span className="syntax-string">"ece"</span>:
                 </div>
-                <div className="font-mono text-sm text-[var(--accent-primary)]">
-                  "Saturdays 10:00 AM - 12:30 PM"
+                <div className="font-mono text-sm text-[var(--accent-primary)] mb-1">
+                  "Room 7102"
+                </div>
+                <div className="font-mono text-xs text-[var(--text-muted)] mb-2">
+                  "SWC National City Campus"
+                </div>
+                <div className="font-mono text-xs text-[var(--accent-success)]">
+                  "Saturdays 10:00AM-12:30PM"
                 </div>
               </div>
             </div>
