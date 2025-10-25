@@ -136,7 +136,7 @@ export default function DiscordPage() {
                 <span className="syntax-comment">// 10:00AM - 12:30PM</span>
               </div>
               <a
-                href="https://maps.google.com/?q=SWC+National+City+Campus+Room+7102"
+                href="https://maps.google.com/?q=SWC+National+City+Campus+Library"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary text-sm w-full inline-block"
@@ -173,7 +173,7 @@ export default function DiscordPage() {
                   <span className="syntax-string">"ece"</span>:
                 </div>
                 <div className="font-mono text-sm text-[var(--accent-primary)] mb-1">
-                  "Room 7102"
+                  "Library"
                 </div>
                 <div className="font-mono text-xs text-[var(--text-muted)] mb-2">
                   "SWC National City Campus"
